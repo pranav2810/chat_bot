@@ -1,0 +1,35 @@
+# Configuration for Rasa NLU.
+# https://rasa.com/docs/rasa/nlu/components/
+language: en
+
+pipeline: "pretrained_embeddings_spacy"
+#pipeline:
+#- name: pretrained_embeddings_spacy
+#- name: WhitespaceTokenizer
+#- name: CRFEntityExtractor
+#- name: EntitySynonymMapper
+#- name: CountVectorsFeaturizer
+#  token_pattern: (?u)\b\w+\b
+#- name: EmbeddingIntentClassifier
+#  url: http://localhost:8000
+#  dimensions:
+#  - number
+
+# Configuration for Rasa Core.
+# https://rasa.com/docs/rasa/core/policies/
+
+policies:
+  - name: MappingPolicy
+  - name: FormPolicy
+  - name: "KerasPolicy"
+    featurizer:
+    - name: MaxHistoryTrackerFeaturizer
+      max_history: 5
+      state_featurizer:
+        - name: BinarySingleStateFeaturizer
+  - name: "MemoizationPolicy"
+    max_history: 5
+  - name: "FallbackPolicy"
+    nlu_threshold: 0.3
+    core_threshold: 0.3
+    fallback_action_name: "action_default_fallback"

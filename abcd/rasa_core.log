@@ -1,0 +1,26 @@
+2019-07-18 09:55:36,091 [ERROR]  Exception occurred while handling uri: 'http://localhost:5005/webhooks/rest/webhook'
+NoneType: None
+2019-07-18 10:20:37,706 [ERROR]  Exception occurred while handling uri: 'http://localhost:5005/webhooks/rest/webhook'
+NoneType: None
+2019-07-18 10:21:37,720 [ERROR]  Exception occurred while handling uri: 'http://localhost:5005/webhooks/rest/webhook'
+NoneType: None
+2019-07-24 11:06:46,157 [ERROR]  Exception occurred while handling uri: 'http://localhost:5005/webhooks/rest/webhook'
+NoneType: None
+2019-07-26 08:57:52,658 [ERROR]  Unable to start server
+Traceback (most recent call last):
+  File "c:\users\mritvik\appdata\local\continuum\anaconda3\lib\site-packages\sanic\server.py", line 745, in serve
+    http_server = loop.run_until_complete(server_coroutine)
+  File "c:\users\mritvik\appdata\local\continuum\anaconda3\lib\asyncio\base_events.py", line 584, in run_until_complete
+    return future.result()
+  File "c:\users\mritvik\appdata\local\continuum\anaconda3\lib\asyncio\base_events.py", line 1378, in create_server
+    % (sa, err.strerror.lower())) from None
+OSError: [Errno 10048] error while attempting to bind on address ('0.0.0.0', 5005): only one usage of each socket address (protocol/network address/port) is normally permitted
+2019-07-26 08:58:19,995 [ERROR]  Unable to start server
+Traceback (most recent call last):
+  File "c:\users\mritvik\appdata\local\continuum\anaconda3\lib\site-packages\sanic\server.py", line 745, in serve
+    http_server = loop.run_until_complete(server_coroutine)
+  File "c:\users\mritvik\appdata\local\continuum\anaconda3\lib\asyncio\base_events.py", line 584, in run_until_complete
+    return future.result()
+  File "c:\users\mritvik\appdata\local\continuum\anaconda3\lib\asyncio\base_events.py", line 1378, in create_server
+    % (sa, err.strerror.lower())) from None
+OSError: [Errno 10048] error while attempting to bind on address ('0.0.0.0', 5005): only one usage of each socket address (protocol/network address/port) is normally permitted

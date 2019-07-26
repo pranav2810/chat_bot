@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block header %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename="css/chat_interface.css") }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename="css/temporary.css") }}">
+<!-- <link rel="stylesheet" href="{{ url_for('static', filename="css/pickmeup.css") }}" type="text/css" /> -->
+<!-- <link rel="stylesheet" media="screen" type="text/css" href="{{ url_for('static', filename="css/demo.css") }}" /> -->
+<!-- <script type="text/javascript" src="static/js/pickmeup.js"></script>  -->
+<!-- <script type="text/javascript" src="static/js/demo.js"></script> -->
+<link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300|Open+Sans:300|Oxygen|Material+Icons" rel="stylesheet">
+<!-- <a href="https://github.com/nazar-pc/PickMeUp">GitHub repository</a>  -->
+{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-sm-6">
+        <div class="row">
+            <div class="chat_window">
+                <ul class="messages"></ul>
+                <div id='display'></div>
+                <div class="bottom_wrapper clearfix">
+                    <div class="message_input_wrapper">
+                        <input id="msg_input" class="message_input" placeholder="Say Hi to begin chat..." />
+                    </div>
+                    <div class="send_message">
+                         <div class="text">send</div>
+                    </div>
+                </div>
+            </div>
+            <div class="message_template">
+                <li class="message">
+                    <div class="avatar"></div>
+                    <div class="text_wrapper">
+                        <div class="text"></div>
+                    </div>
+                </li>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block other_footers %}
+<script src="{{ url_for('static', filename="js/bind.js") }}"></script>
+{% endblock %}

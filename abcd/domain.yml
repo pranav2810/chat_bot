@@ -1,0 +1,237 @@
+%YAML 1.1
+---
+actions:
+- action_extract
+- action_slot_reset
+- utter_ac_service
+- utter_ac_sla
+- utter_ask_additionalInfo
+- utter_ask_additionalInfoReq
+- utter_ask_confirm
+- utter_ask_endDate
+- utter_ask_projectCode
+- utter_ask_refreshmentReq
+- utter_ask_roomType
+- utter_ask_send_mail
+- utter_ask_startDate
+- utter_ask_videoConferenceReq
+- utter_book_room_send_mail
+- utter_conferenceRoom_capacity
+- utter_goodbye
+- utter_greet
+- utter_meetingRoom_capacity
+- utter_okay
+- utter_query_room
+- utter_roomBooking_sla
+- utter_sorry
+- utter_stationery_link
+- utter_stationery_send_mail
+- utter_stationery_ui
+- utter_submit
+- utter_submit_bookroom_form
+- utter_wrong_additionalInfo
+- utter_wrong_additionalInfoReq
+- utter_wrong_endDate
+- utter_wrong_projectCode
+- utter_wrong_refreshmentReq
+- utter_wrong_roomType
+- utter_wrong_startDate
+- utter_wrong_videoConferenceReq
+entities:
+- date
+- projectCode
+- refreshment
+- refreshmentsNo
+- refreshmentsYes
+- roomType
+- stationery_item
+- vc
+- vcNo
+- vcYes
+forms:
+- bookroom_form
+intents:
+- stationery
+- inform_room_booking
+- greet
+- goodbye
+- ac_service
+- thanks
+- affirm
+- stop
+- send_mail
+- deny
+- ask_room_capacity
+- ask_Mroom_capacity
+- ask_Croom_capacity
+- ask_room_details
+- ask_sla
+- ask_roomBooking_sla
+- ask_ac_sla
+slots:
+  additionalInfo:
+    type: unfeaturized
+  additionalInfoReq:
+    type: unfeaturized
+  endDate:
+    type: unfeaturized
+  projectCode:
+    type: unfeaturized
+  refreshment:
+    type: categorical
+    values:
+    - with refreshment
+    - without refreshment
+  refreshmentReq:
+    type: unfeaturized
+  requested_slot:
+    type: unfeaturized
+  roomType:
+    type: unfeaturized
+  startDate:
+    type: unfeaturized
+  stationery_item:
+    type: text
+  vc:
+    type: categorical
+    values:
+    - with vc
+    - without vc
+  videoConferenceReq:
+    type: unfeaturized
+templates:
+  utter_ac_service:
+  - text: You can use this link to raise a ticket for adjusting AC temperatures and
+      for additional air cooler services.<br> <a href='https://virtusa.service-now.com/sp?id=sc_cat_item&sys_id=329ba0efdbeff240a8d4f2adbf961995'
+      target='_blank'> click here </a><br>
+  utter_ac_sla:
+  - text: our facilities team will respond within an hour.
+  utter_ask_additionalInfo:
+  - text: Oh! what is it ?
+  utter_ask_additionalInfoReq:
+  - buttons:
+    - payload: /deny
+      title: 'No'
+    - payload: /affirm
+      title: 'Yes'
+    text: Do you have any additional requirements ?
+  utter_ask_confirm:
+  - buttons:
+    - payload: /deny
+      title: 'No'
+    - payload: /affirm
+      title: 'Yes'
+    text: you want me to stop the process ?
+  utter_ask_endDate:
+  - text: till which date do you need the room ?
+  utter_ask_projectCode:
+  - buttons:
+    - payload: /{"projectCode":"chatbot"}
+      title: chatbot
+    - payload: /{"projectCode":"coding platform"}
+      title: Coding platform
+    - payload: /{"projectCode":"Machine Learning"}
+      title: Machine Learning
+    - payload: /{"projectCode":"online medical store"}
+      title: online medical store
+    - payload: /{"projectCode":"java"}
+      title: java
+    text: What is your project code ?
+  utter_ask_refreshmentReq:
+  - buttons:
+    - payload: /deny
+      title: 'No'
+    - payload: /affirm
+      title: 'Yes'
+    text: Would you like refreshments during the meeting ?
+  utter_ask_roomType:
+  - buttons:
+    - payload: /inform_room_booking {"roomType":"conference room"}
+      title: conference room
+    - payload: /inform_room_booking {"roomType":"meeting room"}
+      title: meeting room
+    text: What kind of room do you want?
+  utter_ask_send_mail:
+  - buttons:
+    - payload: /deny
+      title: 'No'
+    - payload: /affirm
+      title: 'Yes'
+    text: Do you want to send a mail to help desk?
+  utter_ask_startDate:
+  - text: On which day do you need the room ?
+  utter_ask_videoConferenceReq:
+  - buttons:
+    - payload: /deny
+      title: 'No'
+    - payload: /affirm
+      title: 'Yes'
+    text: Do you need video conference set-up ?
+  utter_book_room_send_mail:
+  - text: send book room mail
+  utter_conferenceRoom_capacity:
+  - text: Conference rooms have a capcity of 9 and more.
+  utter_goodbye:
+  - text: bye:)
+  utter_greet:
+  - buttons:
+    - payload: /inform_room_booking
+      title: book a room
+    - payload: /stationery
+      title: request for stationery
+    - payload: /ac_service
+      title: Air conditioner service
+    text: Hey! i'm Usher.<br>I can help you with<br>1- Room bookings for meeting<br>2-
+      AC temperature adjustments<br>3- Stationery
+  utter_meetingRoom_capacity:
+  - text: Meeting rooms have a capcity of 8 and less.
+  utter_okay:
+  - text: Alright! carry on :)
+  utter_query_room:
+  - text: Hey! I can help you book meeting and conference rooms
+  utter_roomBooking_sla:
+  - text: our facilities team will respond within 40 min. So book accordingly
+  utter_sorry:
+  - text: sorry! Could you be more specific
+  utter_stationery_link:
+  - text: You can raise a ticket through <a href='https://virtusa.service-now.com/sp?id=sc_cat_item&sys_id=517fbb3adb2f3a405eb551b0cf9619f7'
+      target='_blank'> vPlus </a>.<br>You will have to attach RM approval mail and
+      scanned copy of items.<br>
+  utter_stationery_send_mail:
+  - text: send stationery mail
+  utter_stationery_ui:
+  - text: Create a list and send a mail to help desk <a href='http://127.0.0.1:8008/stationery_ui'>
+      add items to list </a>
+  utter_submit:
+  - text: done!
+  utter_submit_bookroom_form:
+  - text: 'These are your requirements:<br>Room Type: {roomType}<br>Start date: {startDate}<br>
+      End date: {endDate}<br>Project code: {projectCode}<br>video conference set-up
+      : {videoConferenceReq}<br>refreshments: {refreshmentReq}<br>additional preferences:
+      {additionalInfo}<br>'
+  utter_wrong_additionalInfo:
+  - text: that doesn't look valid
+  utter_wrong_additionalInfoReq:
+  - text: Please either affirm or deny :|
+  utter_wrong_endDate:
+  - text: that isn't valid, re-enter
+  utter_wrong_projectCode:
+  - text: there is no such project, enter a valid project
+  utter_wrong_refreshmentReq:
+  - text: Please say either YES or No :|
+  utter_wrong_roomType:
+  - text: We can provide only conference and meeting rooms
+  utter_wrong_startDate:
+  - text: that doesn't look valid
+  utter_wrong_videoConferenceReq:
+  - text: Please either affirm or deny :|
+  utter_default:
+  - buttons:
+    - payload: /inform_room_booking
+      title: book a room
+    - payload: /stationery
+      title: request for stationery
+    - payload: /ac_service
+      title: Air conditioner service
+    text: I can only help you with<br>1- Room bookings for meeting<br>2-
+      AC temperature adjustments<br>3- Stationery
